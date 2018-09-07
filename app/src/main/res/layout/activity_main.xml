@@ -1,13 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:expandable="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.maple.expandablelistview.library.ExpandableLayout
+        android:id="@+id/first"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:background="#e74c3c"
+        expandable:el_contentLayout="@layout/view_content"
+        expandable:el_headerLayout="@layout/view_header" />
 
-</LinearLayout>
+    <com.maple.expandablelistview.library.ExpandableLayoutListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/first"
+        android:layout_marginTop="15dp" />
+
+</RelativeLayout>
